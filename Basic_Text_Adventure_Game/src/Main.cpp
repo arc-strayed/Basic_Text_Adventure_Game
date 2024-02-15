@@ -4,6 +4,12 @@
 
 int main()
 {
-    std::cout << "Hello" << std::endl;
+    Game* game = new Game();
+
+    while (game->IsRunning())
+    {
+
+    }
+
     return 0;
 }
