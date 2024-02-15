@@ -113,6 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)vendor\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,6 +129,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)vendor\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,7 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\Room.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Item.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\Room.h" />
+    <ClInclude Include="vendor\StringUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

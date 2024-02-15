@@ -1,6 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "Room.h"
+#include "StringUtil.h"
 
 class Game
 {
@@ -11,7 +12,9 @@ public:
     bool IsRunning() const { return running; };
 private:
     Player* player = nullptr;
-    Room rooms[10][10];
+    String* command = nullptr;
 
+    Room rooms[10][10];
+    
     bool running = false;
 };
