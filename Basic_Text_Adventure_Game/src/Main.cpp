@@ -8,7 +8,7 @@ int main()
 
     while (game->IsRunning())
     {
-
+        game->HandleInput();
     }
 
     return 0;

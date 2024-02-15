@@ -9,6 +9,7 @@ public:
     Game();
     ~Game();
 
+    void HandleInput();
     bool IsRunning() const { return running; };
 private:
     Player* player = nullptr;

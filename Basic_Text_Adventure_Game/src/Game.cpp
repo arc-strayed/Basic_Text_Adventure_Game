@@ -16,3 +16,15 @@ Game::~Game()
     player = nullptr;
     command = nullptr;
 }
+
+void Game::HandleInput()
+{
+    std::cout << "Enter a command: ";
+    command->ReadFromConsole();
+    command->ToLower();
+
+    if (command->EqualTo("quit") == true || command->EqualTo("q") == true)
+    {
+        running = false;
+    }
+}
