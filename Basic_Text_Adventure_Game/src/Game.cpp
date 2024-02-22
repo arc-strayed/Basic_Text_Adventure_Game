@@ -79,6 +79,12 @@ void Game::HandleInput()
         }
     }
 
+    // Print out help information
+    if (command->EqualTo("help") || command->EqualTo("h"))
+    {
+        std::cout << "Possible commands:\nquit\nmove north\nmove south\nmove west\nmove east\ndescription\nuse item\nhelp\n";
+    }
+
     std::cout << std::endl;
 }
 
