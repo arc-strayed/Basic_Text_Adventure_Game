@@ -1,4 +1,5 @@
 #pragma once
+#include <StringUtil.h>
 #include "Player.h"
 #include "Room.h"
 
@@ -22,7 +23,8 @@ private:
     Player* player = nullptr;
     String* command = nullptr;
 
-    Room rooms[10][10];
+    const int MAP_SIZE = 10;
+    Room* rooms = nullptr;
 
     Position2D player_position;
 
