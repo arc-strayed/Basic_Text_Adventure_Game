@@ -26,8 +26,12 @@ Game::Game()
         }
     }
 
-    // TEMP room
-    rooms[0][0] = Room("A test room.", &lamp);
+    // TEMP rooms
+    rooms[0][0] = Room("A test room #1.", items[0]);
+
+    rooms[0][1] = Room("A test room. #2", items[1]);
+
+    rooms[0][2] = Room("A test room. #3", items[2]);
 
     running = true;
 
