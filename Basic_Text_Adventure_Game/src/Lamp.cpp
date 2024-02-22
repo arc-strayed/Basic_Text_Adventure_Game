@@ -25,4 +25,13 @@ void Lamp::ShowDescription() const
 void Lamp::Use()
 {
     turned_on = !turned_on;
+
+    if (turned_on)
+    {
+        std::cout << "You lit the lamp." << std::endl;
+    }
+    else
+    {
+        std::cout << "You blow out the lamp." << std::endl;
+    }
 }
