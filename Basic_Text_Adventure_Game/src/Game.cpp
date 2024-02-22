@@ -57,10 +57,26 @@ void Game::HandleInput()
     }
 
     // Movement
-    if (command->EqualTo("move north"))  MovePlayer( 0, -1);
-    if (command->EqualTo("move south"))  MovePlayer( 0,  1);
-    if (command->EqualTo("move west"))   MovePlayer(-1,  0);
-    if (command->EqualTo("move east"))   MovePlayer( 1,  0);
+    if (command->EqualTo("move north"))
+    {
+        MovePlayer(0, -1);
+        rooms[player_position.x][player_position.y].ShowDescription();
+    }
+    if (command->EqualTo("move south"))
+    {
+        MovePlayer(0, 1);
+        rooms[player_position.x][player_position.y].ShowDescription();
+    }
+    if (command->EqualTo("move west")) 
+    {
+        MovePlayer(-1, 0);
+        rooms[player_position.x][player_position.y].ShowDescription();
+    }
+    if (command->EqualTo("move east")) 
+    {
+        MovePlayer(1, 0);
+        rooms[player_position.x][player_position.y].ShowDescription();
+    }
     
     // Show room description
     if (command->EqualTo("description"))
