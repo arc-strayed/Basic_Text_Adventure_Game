@@ -28,10 +28,10 @@ void Cat::Use()
 
     if (purring)
     {
-        std::cout << "You stop petting the cat." << std::endl;
+        std::cout << "You start petting the cat." << std::endl;
     }
     else
     {
-        std::cout << "You start petting the cat." << std::endl;
+        std::cout << "You stop petting the cat." << std::endl;
     }
 }
