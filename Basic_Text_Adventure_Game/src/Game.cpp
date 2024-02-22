@@ -54,8 +54,16 @@ void Game::HandleInput()
 // Moves the player on the map
 void Game::MovePlayer(int x, int y)
 {
-    player_position.x += x;
-    player_position.y += y;
+    int x_position = player_position.x + x;
+    int y_position = player_position.y + y;
 
-    std::cout << "Player moved to " << player_position.x << ", " << player_position.y << std::endl;
+    if (x_position < 0 || x_position > MAP_SIZE - 1 ||
+        y_position < 0 || y_position > MAP_SIZE - 1)
+    {
+        std::cout << "There is no room there." << std::endl;
+    }
+    else
+    {
+        std::cout << "You moved to " << player_position.x << ", " << player_position.y << std::endl;
+    }
 }
