@@ -81,7 +81,7 @@ void Game::HandleInput()
     // Show room description
     if (command->EqualTo("description"))
     {
-        rooms[0][0].ShowDescription();
+        rooms[player_position.x][player_position.y].ShowDescription();
     }
 
     // Use item
