@@ -12,6 +12,6 @@ public:
     // Eat one donut from the box
     virtual void Use();
 private:
-    int count = 0;
+    int count = 5;
 };
 

@@ -3,9 +3,7 @@
 #include <iostream>
 
 BoxOfDonuts::BoxOfDonuts()
-{
-    // TODO: Implement random for number of donuts
-}
+{}
 
 BoxOfDonuts::~BoxOfDonuts()
 {}
