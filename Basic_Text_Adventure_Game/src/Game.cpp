@@ -35,17 +35,37 @@ void Game::HandleInput()
     command->ReadFromConsole();
     command->ToLower();
 
-    // Handle command
+    // Handle quitting
     if (command->EqualTo("quit") == true || command->EqualTo("q") == true)
     {
         running = false;
     }
-    if (command->EqualTo("move north")) MovePlayer( 0, -1);
-    if (command->EqualTo("move south")) MovePlayer( 0,  1);
-    if (command->EqualTo("move west"))  MovePlayer(-1,  0);
-    if (command->EqualTo("move east"))  MovePlayer( 1,  0);
 
-    std::cout << '\n';
+    // Movement
+    if (command->EqualTo("move north"))  MovePlayer( 0, -1);
+    if (command->EqualTo("move south"))  MovePlayer( 0,  1);
+    if (command->EqualTo("move west"))   MovePlayer(-1,  0);
+    if (command->EqualTo("move east"))   MovePlayer( 1,  0);
+    
+    // Show room description
+    if (command->EqualTo("description"))
+    {
+        rooms[0][0].ShowDescription();
+    }
+
+    // Use item
+    if (command->EqualTo("use item"))
+    {
+        Item* item = rooms[player_position.x][player_position.y].room_item;
+
+        if (item)
+        {
+            item->Use();
+        }
+    }
+
+    std::cout << std::endl;
+}
 }
 
 // Moves the player on the map

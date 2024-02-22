@@ -36,4 +36,3 @@ void Room::ShowDescription() const
         }
     }
 }
-}

@@ -14,8 +14,6 @@ public:
 
     // Show description of room
     void ShowDescription() const;
-    // Use item in room
-    void Use() const;
 private:
     std::string Room_Description;
 };
