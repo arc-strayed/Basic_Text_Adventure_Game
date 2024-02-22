@@ -1,9 +1,11 @@
+#include <iostream>
 #include "Game.h"
 
 Game::Game()
 {
     player = new Player();
-    command = new String();
+    command = new String("");
+
 
     running = true;
 }
@@ -19,10 +21,11 @@ Game::~Game()
 
 void Game::HandleInput()
 {
-    std::cout << "Enter a command: ";
+    std::cout << "$: ";
     command->ReadFromConsole();
     command->ToLower();
 
+    // Handle command
     if (command->EqualTo("quit") == true || command->EqualTo("q") == true)
     {
         running = false;
