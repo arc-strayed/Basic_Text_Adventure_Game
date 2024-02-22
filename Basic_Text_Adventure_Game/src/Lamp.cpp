@@ -9,7 +9,7 @@ Lamp::~Lamp()
 {}
 
 // Shows the description of the item
-void Lamp::ShowDescription()
+void Lamp::ShowDescription() const
 {
     if (turned_on)
     {

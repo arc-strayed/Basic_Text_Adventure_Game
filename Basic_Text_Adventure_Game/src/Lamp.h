@@ -8,7 +8,7 @@ public:
     ~Lamp();
 
     // Shows the description of the item
-    virtual void ShowDescription();
+    virtual void ShowDescription() const;
     // Turns the lamp on or off
     virtual void Use();
 private:

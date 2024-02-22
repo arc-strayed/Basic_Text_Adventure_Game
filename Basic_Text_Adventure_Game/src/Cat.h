@@ -8,7 +8,7 @@ public:
     ~Cat();
 
     // Shows the description of the item
-    virtual void ShowDescription();
+    virtual void ShowDescription() const;
     // Pet the cat
     virtual void Use();
 private:

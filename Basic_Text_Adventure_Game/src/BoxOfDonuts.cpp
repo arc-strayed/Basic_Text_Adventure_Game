@@ -11,7 +11,7 @@ BoxOfDonuts::~BoxOfDonuts()
 {}
 
 // Shows the description of the item
-void BoxOfDonuts::ShowDescription()
+void BoxOfDonuts::ShowDescription() const
 {
     if (count > 0)
     {

@@ -8,7 +8,7 @@ public:
     ~BoxOfDonuts();
 
     // Shows the description of the item
-    virtual void ShowDescription();
+    virtual void ShowDescription() const;
     // Eat one donut from the box
     virtual void Use();
 private:

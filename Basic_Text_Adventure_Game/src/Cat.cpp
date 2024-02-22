@@ -9,7 +9,7 @@ Cat::~Cat()
 {}
 
 // Shows the description of the item
-void Cat::ShowDescription()
+void Cat::ShowDescription() const
 {
     if (purring)
     {
