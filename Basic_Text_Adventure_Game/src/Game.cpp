@@ -10,12 +10,9 @@ Game::Game()
 
     // Instantiate rooms
     Room* rooms = new Room[MAP_SIZE * MAP_SIZE];
-    for (int i = 0; i < MAP_SIZE * MAP_SIZE; i += MAP_SIZE)
+    for (int i = 0; i < MAP_SIZE * MAP_SIZE; i++)
     {
-        for (int j = 0; j < MAP_SIZE; j++)
-        {
-            rooms[i * MAP_SIZE + j] = Room();
-        }
+        rooms[i] = Room();
     }
 
     running = true;
