@@ -61,6 +61,8 @@ void Game::MovePlayer(int x, int y)
     }
     else
     {
+        player_position.x += x;
+        player_position.y += y;
         std::cout << "You moved to " << player_position.x << ", " << player_position.y << std::endl;
     }
 }
