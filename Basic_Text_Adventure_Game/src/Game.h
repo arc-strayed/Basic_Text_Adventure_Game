@@ -1,7 +1,12 @@
 #pragma once
 #include "Player.h"
 #include "Room.h"
-#include "StringUtil.h"
+
+struct Position2D
+{
+    int x;
+    int y;
+};
 
 class Game
 {
@@ -11,11 +16,15 @@ public:
 
     void HandleInput();
     bool IsRunning() const { return running; };
+
+    void MovePlayer(int x, int y);
 private:
     Player* player = nullptr;
     String* command = nullptr;
 
     Room rooms[10][10];
-    
+
+    Position2D player_position;
+
     bool running = false;
 };

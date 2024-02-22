@@ -6,6 +6,9 @@ Game::Game()
     player = new Player();
     command = new String("");
 
+    player_position = { 0, 0 };
+
+    // Instantiate rooms
 
     running = true;
 }
@@ -30,4 +33,19 @@ void Game::HandleInput()
     {
         running = false;
     }
+    if (command->EqualTo("move forward"))  MovePlayer( 0, -1);
+    if (command->EqualTo("move backward")) MovePlayer( 0,  1);
+    if (command->EqualTo("move left"))     MovePlayer(-1,  0);
+    if (command->EqualTo("move right"))    MovePlayer( 1,  0);
+
+    std::cout << '\n';
+}
+
+// Moves the player on the map
+void Game::MovePlayer(int x, int y)
+{
+    player_position.x += x;
+    player_position.y += y;
+
+    std::cout << "Player moved to " << player_position.x << ", " << player_position.y << std::endl;
 }
