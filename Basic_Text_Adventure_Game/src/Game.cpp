@@ -112,7 +112,16 @@ void Game::Render()
     {
         for (int row = 0; row < 12; row++)
         {
-            std::cout << screen[row][column] << ' ';
+            std::cout << screen[row][column];
+
+            if (column == 0 && row < 11 || column == 11 && row < 11)
+            {
+                std::cout << '-';
+            }
+            else
+            {
+                std::cout << ' ';
+            }
         }
 
         std::cout << '\n';
