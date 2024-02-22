@@ -161,12 +161,12 @@ void Game::MovePlayer(int x, int y)
     if (x_position < 0 || x_position > MAP_SIZE - 1 ||
         y_position < 0 || y_position > MAP_SIZE - 1)
     {
-        std::cout << "There is no room there." << std::endl;
+        std::cout << "There is no room there.\n" << std::endl;
     }
     else
     {
         player_position.x += x;
         player_position.y += y;
-        std::cout << "You moved to " << player_position.x << ", " << player_position.y << std::endl;
+        std::cout << "You moved to " << player_position.x << ", " << player_position.y << '\n' << std::endl;
     }
 }
