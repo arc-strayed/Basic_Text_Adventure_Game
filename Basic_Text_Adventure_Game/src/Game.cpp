@@ -19,8 +19,18 @@ Game::Game()
             rooms[column][row] = Room();
         }
     }
+
+    // Instantiate screen
+    for (int column = 0; column < 12; column++)
     {
+        for (int row = 0; row < 12; row++)
+        {
+            screen[column][row] = '.';
+        }
     }
+
+    // TEMP room
+    rooms[0][0] = Room("A test room.", &lamp);
 
     running = true;
 }
@@ -71,6 +81,44 @@ void Game::HandleInput()
 
     std::cout << std::endl;
 }
+
+void Game::Render()
+{
+    // Add borders
+    for (int column = 0; column < 12; column++)
+    {
+        for (int row = 0; row < 12; row++)
+        {
+            if (column == 0 || column == 11)
+            {
+                screen[column][row] = '|';
+            }
+            else if (row == 0 || row == 11)
+            {
+                screen[column][row] = '-';
+            }
+            else
+            {
+                screen[column][row] = '.';
+            }
+        }
+    }
+
+    // Draw player position
+    screen[player_position.x + 1][player_position.y + 1] = '@';
+
+    // Print map to console
+    for (int column = 0; column < 12; column++)
+    {
+        for (int row = 0; row < 12; row++)
+        {
+            std::cout << screen[row][column] << ' ';
+        }
+
+        std::cout << '\n';
+    }
+
+    std::cout << std::endl;
 }
 
 // Moves the player on the map

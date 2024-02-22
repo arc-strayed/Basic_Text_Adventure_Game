@@ -16,6 +16,8 @@ public:
     ~Game();
 
     void HandleInput();
+    void Render();
+
     bool IsRunning() const { return running; };
 
     void MovePlayer(int x, int y);
@@ -25,6 +27,8 @@ private:
 
     const int MAP_SIZE = 10;
     Room rooms[10][10] = {};
+
+    char screen[12][12] = {};
 
     Position2D player_position;
 

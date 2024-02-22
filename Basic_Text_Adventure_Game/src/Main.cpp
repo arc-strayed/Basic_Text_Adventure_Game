@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #include "Game.h"
 
 int main()
@@ -9,6 +7,7 @@ int main()
     while (game->IsRunning())
     {
         game->HandleInput();
+        game->Render();
     }
 
     return 0;
