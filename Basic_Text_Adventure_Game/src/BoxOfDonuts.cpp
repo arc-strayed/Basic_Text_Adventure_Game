@@ -26,6 +26,13 @@ void BoxOfDonuts::ShowDescription() const
 // Eat one donut from the box
 void BoxOfDonuts::Use()
 {
-    std::cout << "You ate a donut." << std::endl;
-    count--;
+    if (count > 0)
+    {
+        std::cout << "You ate a donut." << std::endl;
+        count--;
+    }
+    else
+    {
+        std::cout << "There are no more donuts to eat." << std::endl;
+    }
 }
