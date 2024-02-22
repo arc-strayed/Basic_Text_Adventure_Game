@@ -33,6 +33,11 @@ Game::Game()
     rooms[0][0] = Room("A test room.", &lamp);
 
     running = true;
+
+    // Intro message
+    std::cout << "You find yourself in an unfamiliar place with a series of rooms." << std::endl;
+
+    Render();
 }
 
 Game::~Game()
