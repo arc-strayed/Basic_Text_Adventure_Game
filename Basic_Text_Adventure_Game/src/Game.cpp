@@ -33,10 +33,10 @@ void Game::HandleInput()
     {
         running = false;
     }
-    if (command->EqualTo("move forward"))  MovePlayer( 0, -1);
-    if (command->EqualTo("move backward")) MovePlayer( 0,  1);
-    if (command->EqualTo("move left"))     MovePlayer(-1,  0);
-    if (command->EqualTo("move right"))    MovePlayer( 1,  0);
+    if (command->EqualTo("move north")) MovePlayer( 0, -1);
+    if (command->EqualTo("move south")) MovePlayer( 0,  1);
+    if (command->EqualTo("move west"))  MovePlayer(-1,  0);
+    if (command->EqualTo("move east"))  MovePlayer( 1,  0);
 
     std::cout << '\n';
 }
