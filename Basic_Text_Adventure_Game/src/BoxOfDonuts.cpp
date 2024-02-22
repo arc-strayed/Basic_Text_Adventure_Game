@@ -10,6 +10,7 @@ BoxOfDonuts::BoxOfDonuts()
 BoxOfDonuts::~BoxOfDonuts()
 {}
 
+// Shows the description of the item
 void BoxOfDonuts::ShowDescription()
 {
     if (count > 0)
@@ -22,6 +23,7 @@ void BoxOfDonuts::ShowDescription()
     }
 }
 
+// Eat one donut from the box
 void BoxOfDonuts::Use()
 {
     std::cout << "You ate a donut." << std::endl;
