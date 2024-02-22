@@ -1,8 +1,5 @@
 #include <iostream>
 #include "Game.h"
-#include "Lamp.h"
-
-Lamp lamp = Lamp();
 
 Game::Game()
 {
@@ -44,6 +41,11 @@ Game::~Game()
 {
     delete player;
     delete command;
+    
+    for (int i = 0; i < 3; i++)
+    {
+        delete items[i];
+    }
 
     player = nullptr;
     command = nullptr;

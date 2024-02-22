@@ -2,6 +2,9 @@
 #include <StringUtil.h>
 #include "Player.h"
 #include "Room.h"
+#include "Lamp.h"
+#include "BoxOfDonuts.h"
+#include "Cat.h"
 
 struct Position2D
 {
@@ -24,6 +27,7 @@ public:
 private:
     Player* player = nullptr;
     String* command = nullptr;
+    Item* items[3] = { new Lamp(), new BoxOfDonuts(), new Cat() };
 
     const int MAP_SIZE = 10;
     Room rooms[10][10] = {};
