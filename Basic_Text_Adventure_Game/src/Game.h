@@ -24,7 +24,7 @@ private:
     String* command = nullptr;
 
     const int MAP_SIZE = 10;
-    Room* rooms = nullptr;
+    Room rooms[10][10] = {};
 
     Position2D player_position;
 
