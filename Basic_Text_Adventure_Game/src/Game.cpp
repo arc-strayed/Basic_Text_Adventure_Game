@@ -36,7 +36,7 @@ Game::Game()
     running = true;
 
     // Intro message
-    std::cout << "You find yourself in an unfamiliar place with a series of rooms." << std::endl;
+    std::cout << "You find yourself in an unfamiliar place with a series of rooms.\n(Type \"help\" for commands)" << std::endl;
 
     Render();
 }
