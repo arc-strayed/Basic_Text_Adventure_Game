@@ -8,9 +8,9 @@ public:
     ~Lamp();
 
     // Shows the description of the item
-    virtual void ShowDescription() const;
+    void ShowDescription() const override;
     // Turns the lamp on or off
-    virtual void Use();
+    void Use() override;
 private:
     bool turned_on = false;
 };

@@ -8,9 +8,9 @@ public:
     ~Cat();
 
     // Shows the description of the item
-    virtual void ShowDescription() const;
+    void ShowDescription() const override;
     // Pet the cat
-    virtual void Use();
+    void Use() override;
 private:
     bool purring = false;
 };

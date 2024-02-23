@@ -8,9 +8,9 @@ public:
     ~BoxOfDonuts();
 
     // Shows the description of the item
-    virtual void ShowDescription() const;
+    void ShowDescription() const override;
     // Eat one donut from the box
-    virtual void Use();
+    void Use() override;
 private:
     int count = 5;
 };
