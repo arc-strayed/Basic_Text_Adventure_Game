@@ -117,7 +117,7 @@ void Game::HandleInput()
 
 void Game::Render()
 {
-    // Add borders
+    // Add borders // Vertical scan
     for (int column = 0; column < 12; column++)
     {
         for (int row = 0; row < 12; row++)
@@ -140,14 +140,14 @@ void Game::Render()
     // Draw player position
     screen[player_position.x + 1][player_position.y + 1] = '@';
 
-    // Print map to console
-    for (int column = 0; column < 12; column++)
+    // Print map to console // Horizontal scan
+    for (int row = 0; row < 12; row++)
     {
-        for (int row = 0; row < 12; row++)
+        for (int column = 0; column < 12; column++)
         {
-            std::cout << screen[row][column];
+            std::cout << screen[column][row];
 
-            if (column == 0 && row < 11 || column == 11 && row < 11)
+            if (row == 0 && column < 11 || row == 11 && column < 11)
             {
                 std::cout << '-';
             }
