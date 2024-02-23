@@ -106,6 +106,22 @@ void Game::HandleInput()
         }
     }
 
+    if (command->Find("spell ") >= 0)
+    {
+        command->Replace("spell ", "");
+
+        command->WriteToConsole();
+
+        if (player->FindSpell(*command))
+        {
+            std::cout << "You have that spell!" << std::endl;
+        }
+        else
+        {
+            std::cout << "You don't have that spell!" << std::endl;
+        }
+    }
+
     // Print out help information
     if (command->EqualTo("help") || command->EqualTo("h"))
     {
