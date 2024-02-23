@@ -160,7 +160,7 @@ void String::Replace(const String& stringToFind, const String& replaceString)
 	int foundLocation = Find(stringToFind);
 
 	// Loop while there is still a stringToFind
-	while (foundLocation > 0)
+	while (foundLocation >= 0)
 	{
 		stringSize += replaceString.stringSize;
 		char* newString = new char[stringSize];
