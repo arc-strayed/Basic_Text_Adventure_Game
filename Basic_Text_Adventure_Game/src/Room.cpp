@@ -16,11 +16,7 @@ Room::Room(const std::string& description, Item* item)
 
 Room::~Room()
 {
-    if (room_item)
-    {
-        //delete room_item;
-        room_item = nullptr;
-    }
+    if (room_item) room_item = nullptr;
 }
 
 // Show description of room
