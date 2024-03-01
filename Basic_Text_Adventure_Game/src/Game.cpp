@@ -161,8 +161,19 @@ void Game::Render()
     {
         for (int column = 0; column < 12; column++)
         {
+            std::cout << "\x1b[1;30m";
+
+            // Color player's character yellow
+            if (column == player_position.x + 1 && row == player_position.y + 1)
+            {
+                std::cout << "\x1b[0m";
+                std::cout << "\x1b[1;33m";
+            }
+
+            // Draw character
             std::cout << screen[column][row];
 
+            // Fill borders and spaces
             if (row == 0 && column < 11 || row == 11 && column < 11)
             {
                 std::cout << '-';
@@ -171,6 +182,9 @@ void Game::Render()
             {
                 std::cout << ' ';
             }
+
+            // Reset coloring
+            std::cout << "\x1b[0m";
         }
 
         std::cout << '\n';
