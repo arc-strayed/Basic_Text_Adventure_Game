@@ -4,7 +4,7 @@
 
 Room::Room()
 {
-    Room_Description = "Empty room.";
+    Room_Description = "You enter an empty room.";
 }
 
 Room::Room(const std::string& description, Item* item)

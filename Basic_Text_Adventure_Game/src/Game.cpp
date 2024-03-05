@@ -26,12 +26,12 @@ Game::Game()
         }
     }
 
-    // TEMP rooms
-    rooms[0][0] = Room("A test room #1.", items[0]);
+    // Rooms
+    rooms[2][0] = Room("You are in a dark room.", items[0]);
 
-    rooms[0][1] = Room("A test room. #2", items[1]);
+    rooms[2][5] = Room("You are in a room with a table.", items[1]);
 
-    rooms[0][2] = Room("A test room. #3", items[2]);
+    rooms[4][7] = Room("You are in a room with a creature.", items[2]);
 
     running = true;
 
