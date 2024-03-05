@@ -8,7 +8,7 @@ Game::Game()
 
     player_position = { 0, 0 };
 
-    // Instantiate rooms
+    // Create rooms
     for (int column = 0; column < MAP_SIZE; column++)
     {
         for (int row = 0; row < MAP_SIZE; row++)
@@ -17,7 +17,7 @@ Game::Game()
         }
     }
 
-    // Instantiate screen
+    // Fill screen
     for (int column = 0; column < 12; column++)
     {
         for (int row = 0; row < 12; row++)
@@ -33,16 +33,19 @@ Game::Game()
 
     rooms[4][7] = Room("You are in a room with a creature.", items[2]);
 
-    running = true;
-
     // Intro message
     std::cout << "You find yourself in an unfamiliar place with a series of rooms.\n(Type \"help\" for commands)" << std::endl;
 
+    // Map
     Render();
+
+    // Game
+    running = true;
 }
 
 Game::~Game()
 {
+    // Clean up
     delete player;
     delete command;
     
@@ -55,6 +58,7 @@ Game::~Game()
     command = nullptr;
 }
 
+// Handles player input
 void Game::HandleInput()
 {
     std::cout << "$: ";
@@ -100,21 +104,17 @@ void Game::HandleInput()
     {
         Item* item = rooms[player_position.x][player_position.y].room_item;
 
-        if (item)
-        {
-            item->Use();
-        }
+        if (item) item->Use();
     }
 
+    // Find a spell
     if (command->Find("spell ") >= 0)
     {
         command->Replace("spell ", "");
 
-        command->WriteToConsole();
-
         if (player->FindSpell(*command))
         {
-            std::cout << "You have that spell!" << std::endl;
+            std::cout << "You have that spell." << std::endl;
         }
         else
         {
@@ -125,15 +125,16 @@ void Game::HandleInput()
     // Print out help information
     if (command->EqualTo("help") || command->EqualTo("h"))
     {
-        std::cout << "Possible commands:\nquit\nmove north\nmove south\nmove west\nmove east\ndescription\nuse item\nhelp\n";
+        std::cout << "Possible commands:\nquit\nmove north\nmove south\nmove west\nmove east\ndescription\nuse item\nspell (x)\nhelp\n";
     }
 
     std::cout << std::endl;
 }
 
+// Renders a map to the console
 void Game::Render()
 {
-    // Add borders // Vertical scan
+    // Add borders and clear screen
     for (int column = 0; column < 12; column++)
     {
         for (int row = 0; row < 12; row++)
@@ -153,17 +154,18 @@ void Game::Render()
         }
     }
 
-    // Draw player position
+    // Set player's position on map
     screen[player_position.x + 1][player_position.y + 1] = '@';
 
-    // Print map to console // Horizontal scan
+    // Print map to console
     for (int row = 0; row < 12; row++)
     {
         for (int column = 0; column < 12; column++)
         {
+            // Sets color to black for map
             std::cout << "\x1b[1;30m";
 
-            // Color player's character yellow
+            // Color player's character bright yellow
             if (column == player_position.x + 1 && row == player_position.y + 1)
             {
                 std::cout << "\x1b[0m";
@@ -187,13 +189,14 @@ void Game::Render()
             std::cout << "\x1b[0m";
         }
 
+        // Move to next line
         std::cout << '\n';
     }
 
     std::cout << std::endl;
 }
 
-// Moves the player on the map
+// Moves the player
 void Game::MovePlayer(int x, int y)
 {
     int x_position = player_position.x + x;
@@ -206,8 +209,8 @@ void Game::MovePlayer(int x, int y)
     }
     else
     {
-        player_position.x += x;
-        player_position.y += y;
+        player_position.x = x_position;
+        player_position.y = y_position;
         std::cout << "You moved to " << player_position.x << ", " << player_position.y << '\n' << std::endl;
     }
 }

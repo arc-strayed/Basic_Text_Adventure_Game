@@ -9,8 +9,9 @@ public:
     Player();
     ~Player();
 
-    bool FindSpell(const String& name);
-private:
+    bool FindSpell(const String& name); // Finds a spell using binary search
 
-    std::vector<String*> spells = { new String("eclipse"), new String("explode"), new String("portal"), new String("sigmund's clairvoyance") };
+private:
+    std::vector<String*> spells;
+
 };

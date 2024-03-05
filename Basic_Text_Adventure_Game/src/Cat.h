@@ -6,11 +6,11 @@ class Cat : public Item
 public:
     Cat();
     ~Cat();
+    
+    void ShowDescription() const override; // Shows the description of the item
+    void Use() override; // Pet the cat
 
-    // Shows the description of the item
-    void ShowDescription() const override;
-    // Pet the cat
-    void Use() override;
 private:
     bool purring = false;
+
 };

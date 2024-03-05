@@ -6,11 +6,11 @@ class Lamp : public Item
 public:
     Lamp();
     ~Lamp();
+    
+    void ShowDescription() const override; // Shows the description of the item
+    void Use() override; // Turns the lamp on or off
 
-    // Shows the description of the item
-    void ShowDescription() const override;
-    // Turns the lamp on or off
-    void Use() override;
 private:
     bool turned_on = false;
+
 };

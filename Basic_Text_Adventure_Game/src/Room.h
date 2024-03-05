@@ -6,14 +6,15 @@
 class Room
 {
 public:
-    Item* room_item = nullptr;
-
     Room();
     Room(const std::string& description, Item* item);
     ~Room();
 
-    // Show description of room
-    void ShowDescription() const;
+    Item* room_item = nullptr;
+
+    void ShowDescription() const; // Show description of room
+
 private:
     std::string Room_Description;
+
 };

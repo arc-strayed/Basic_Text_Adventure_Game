@@ -6,7 +6,7 @@
 #include "BoxOfDonuts.h"
 #include "Cat.h"
 
-struct Position2D
+struct Position2D // Simple struct for holding x and y position
 {
     int x;
     int y;
@@ -18,23 +18,28 @@ public:
     Game();
     ~Game();
 
-    void HandleInput();
-    void Render();
+    void HandleInput(); // Handles player input
+    void Render(); // Renders a map to the console
 
     bool IsRunning() const { return running; };
 
-    void MovePlayer(int x, int y);
-private:
-    Player* player = nullptr;
-    String* command = nullptr;
-    Item* items[3] = { new Lamp(), new BoxOfDonuts(), new Cat() };
+    void MovePlayer(int x, int y); // Moves the player
 
+private:
+    // Player
+    Player* player = nullptr;
+    Position2D player_position;
+    String* command = nullptr;
+
+    // Room
     const int MAP_SIZE = 10;
     Room rooms[10][10] = {};
+    Item* items[3] = { new Lamp(), new BoxOfDonuts(), new Cat() };
 
+    // Map
     char screen[12][12] = {};
 
-    Position2D player_position;
-
+    // Game
     bool running = false;
+
 };

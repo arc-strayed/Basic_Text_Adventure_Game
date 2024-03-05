@@ -5,7 +5,7 @@
 
 Player::Player()
 {
-
+    spells = { new String("eclipse"), new String("explode"), new String("portal"), new String("sigmund's clairvoyance") };
 }
 
 Player::~Player()
@@ -16,6 +16,7 @@ Player::~Player()
     }
 }
 
+// Finds a spell using binary search
 bool Player::FindSpell(const String& name)
 {
     int start_index = 0;
@@ -24,8 +25,6 @@ bool Player::FindSpell(const String& name)
     while (start_index <= end_index)
     {
         int iterator = (start_index + end_index) / 2;
-
-        std::cout << iterator << ", " << spells[iterator]->CStr() << '\n';
 
         if (*spells[iterator] == name)
             return true;

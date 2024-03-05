@@ -7,11 +7,12 @@ public:
     BoxOfDonuts();
     ~BoxOfDonuts();
 
-    // Shows the description of the item
-    void ShowDescription() const override;
-    // Eat one donut from the box
-    void Use() override;
+    
+    void ShowDescription() const override; // Shows the description of the item
+    void Use() override; // Eat one donut from the box
+
 private:
     int count = 5;
+
 };
 
