@@ -6,6 +6,7 @@
 #include "BoxOfDonuts.h"
 #include "Cat.h"
 #include "ExplosiveBarrel.h"
+#include "Compass.h"
 
 struct Position2D // Simple struct for holding x and y position
 {
@@ -35,10 +36,13 @@ private:
     Position2D player_position;
     String* command = nullptr;
 
+    const char compass_ascii[40] = "   N   \n   |  \nW --- E\n   |  \n   S   \n\n"; // Compass
+    bool has_compass = false;
+
     // Room
     const int MAP_SIZE = 10;
     Room rooms[10][10] = {};
-    Item* items[4] = { new Lamp(), new BoxOfDonuts(), new Cat(), new ExplosiveBarrel(&running)};
+    Item* items[5] = { new Lamp(), new BoxOfDonuts(), new Cat(), new ExplosiveBarrel(&running), new Compass(&has_compass)};
 
     // Map
     char screen[12][12] = {};

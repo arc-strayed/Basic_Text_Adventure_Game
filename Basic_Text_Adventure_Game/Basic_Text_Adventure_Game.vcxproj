@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\vendor\StringUtil\StringUtil.cpp" />
+    <ClCompile Include="src\Compass.cpp" />
     <ClCompile Include="src\ExplosiveBarrel.cpp" />
     <ClCompile Include="src\Cat.cpp" />
     <ClCompile Include="src\BoxOfDonuts.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="src\Room.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Compass.h" />
     <ClInclude Include="src\ExplosiveBarrel.h" />
     <ClInclude Include="src\Cat.h" />
     <ClInclude Include="src\BoxOfDonuts.h" />

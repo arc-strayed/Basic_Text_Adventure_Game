@@ -27,6 +27,8 @@ Game::Game()
     }
 
     // Rooms
+    rooms[0][0] = Room("You are in a room with a table.", items[4]);
+
     rooms[2][0] = Room("You are in a dark room.", items[0]);
 
     rooms[2][5] = Room("You are in a room with a table.", items[1]);
@@ -158,6 +160,9 @@ void Game::Render()
 
     // Set player's position on map
     screen[player_position.x + 1][player_position.y + 1] = '@';
+
+    // Draw compass
+    if (has_compass) std::cout << compass_ascii;
 
     // Print map to console
     for (int row = 0; row < 12; row++)
