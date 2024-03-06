@@ -33,6 +33,8 @@ Game::Game()
 
     rooms[4][7] = Room("You are in a room with a creature.", items[2]);
 
+    rooms[2][8] = Room("You are in a room with a barrel.", items[3]);
+
     // Intro message
     std::cout << "You find yourself in an unfamiliar place with a series of rooms.\n(Type \"help\" for commands)" << std::endl;
 

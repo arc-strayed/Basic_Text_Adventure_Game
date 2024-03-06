@@ -5,6 +5,7 @@
 #include "Lamp.h"
 #include "BoxOfDonuts.h"
 #include "Cat.h"
+#include "ExplosiveBarrel.h"
 
 struct Position2D // Simple struct for holding x and y position
 {
@@ -26,6 +27,9 @@ public:
     void MovePlayer(int x, int y); // Moves the player
 
 private:
+    // Game
+    bool running = false;
+
     // Player
     Player* player = nullptr;
     Position2D player_position;
@@ -34,12 +38,9 @@ private:
     // Room
     const int MAP_SIZE = 10;
     Room rooms[10][10] = {};
-    Item* items[3] = { new Lamp(), new BoxOfDonuts(), new Cat() };
+    Item* items[4] = { new Lamp(), new BoxOfDonuts(), new Cat(), new ExplosiveBarrel(&running)};
 
     // Map
     char screen[12][12] = {};
-
-    // Game
-    bool running = false;
 
 };
