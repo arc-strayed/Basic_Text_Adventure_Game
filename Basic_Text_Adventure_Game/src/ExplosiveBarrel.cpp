@@ -24,6 +24,6 @@ void ExplosiveBarrel::ShowDescription() const
 // Causes the barrel to explode
 void ExplosiveBarrel::Use()
 {
-    std::cout << "You light the barrel causing it to explode before you could exit.\n\x1b[2;31mYOU ARE DEAD\x1b[0m" << std::endl;
+    std::cout << "You light the barrel causing it to explode before you could exit.\n\n~~~~~~~~~~~~~~~~\n~ YOU ARE DEAD ~\n~~~~~~~~~~~~~~~~" << std::endl;
     *is_game_running = false;
 }

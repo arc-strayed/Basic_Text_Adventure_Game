@@ -169,16 +169,6 @@ void Game::Render()
     {
         for (int column = 0; column < 12; column++)
         {
-            // Sets color to black for map
-            std::cout << "\x1b[1;30m";
-
-            // Color player's character bright yellow
-            if (column == player_position.x + 1 && row == player_position.y + 1)
-            {
-                std::cout << "\x1b[0m";
-                std::cout << "\x1b[1;33m";
-            }
-
             // Draw character
             std::cout << screen[column][row];
 
@@ -191,9 +181,6 @@ void Game::Render()
             {
                 std::cout << ' ';
             }
-
-            // Reset coloring
-            std::cout << "\x1b[0m";
         }
 
         // Move to next line
