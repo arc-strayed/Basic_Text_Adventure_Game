@@ -11,7 +11,9 @@ ExplosiveBarrel::ExplosiveBarrel(bool* game_running)
 {}
 
 ExplosiveBarrel::~ExplosiveBarrel()
-{}
+{
+    is_game_running = nullptr;
+}
 
 // Show description of the item
 void ExplosiveBarrel::ShowDescription() const
